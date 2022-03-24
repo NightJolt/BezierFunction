@@ -1,0 +1,8 @@
+C:/Files/programming/visual code/projects/BezierFunction/build/CMakeFiles/BezierFunction.dir
+C:/Files/programming/visual code/projects/BezierFunction/build/CMakeFiles/edit_cache.dir
+C:/Files/programming/visual code/projects/BezierFunction/build/CMakeFiles/rebuild_cache.dir
+C:/Files/programming/visual code/projects/BezierFunction/build/FunEngine2D/CMakeFiles/edit_cache.dir
+C:/Files/programming/visual code/projects/BezierFunction/build/FunEngine2D/CMakeFiles/rebuild_cache.dir
+C:/Files/programming/visual code/projects/BezierFunction/build/FunEngine2D/core/CMakeFiles/fe2d_core.dir
+C:/Files/programming/visual code/projects/BezierFunction/build/FunEngine2D/core/CMakeFiles/edit_cache.dir
+C:/Files/programming/visual code/projects/BezierFunction/build/FunEngine2D/core/CMakeFiles/rebuild_cache.dir
