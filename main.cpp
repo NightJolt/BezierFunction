@@ -11,10 +11,13 @@
 #include "FunEngine2D/core/include/interact/interactable.h"
 
 #include "interface.h"
+#include "bezier_function_editor.h"
 
 int main () {
     fun::winmgr::init(fun::winmgr::window_data_t("Bezier Function Editor"));
     auto* window = fun::winmgr::main_window;
+
+    bezier::bezier_function_editor_t bezier_function_editor({ 100, 100 }, { 10, 10 }, { 300, 100 });
     
     while (window->render.isOpen()) {
         fun::time::recalculate();
@@ -23,6 +26,8 @@ int main () {
         fun::winmgr::update();
 
         bezier::draw_interface();
+
+        bezier_function_editor.draw(window, 0);
 
         window->display(sf::Color::Black);
     }

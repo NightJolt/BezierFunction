@@ -1,0 +1,104 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.22.0"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "FunEngine2D",
+					"childIndexes" : 
+					[
+						2
+					],
+					"jsonFile" : "directory-FunEngine2D-Debug-744cfb2cfd17ede646af.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.22.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "FunEngine2D"
+				},
+				{
+					"build" : "FunEngine2D/core",
+					"jsonFile" : "directory-FunEngine2D.core-Debug-26337f4bb155974e84f4.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.22.0"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "FunEngine2D/core",
+					"targetIndexes" : 
+					[
+						1
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2
+					],
+					"name" : "BezierFunction",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "BezierFunction::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-BezierFunction-Debug-041bbd61559809ae5edb.json",
+					"name" : "BezierFunction",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "fe2d_core::@8c5441341aa80ba057a2",
+					"jsonFile" : "target-fe2d_core-Debug-5f26782ecc1259711014.json",
+					"name" : "fe2d_core",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Files/programming/visual code/projects/BezierFunction/build",
+		"source" : "C:/Files/programming/visual code/projects/BezierFunction"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

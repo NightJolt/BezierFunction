@@ -30,9 +30,7 @@ namespace bezier {
 
         void add_anchor(fun::vec2f_t, bool = true, bool = true);
 
-    private:
-
-        void create_point(fun::ecs::entity_t);
+        std::vector <fun::ecs::entity_t>& get_anchors();
 
     private:
 

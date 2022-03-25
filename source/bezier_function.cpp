@@ -14,6 +14,32 @@ bezier::bezier_function_t::bezier_function_t() {
     add_anchor({ 1.f, .5f }, true, false);
 }
 
+bezier::bezier_function_t::~bezier_function_t() {
+    for (uint32_t i = 0; i < m_anchors.size(); i++) {
+        auto anchor_entity = m_anchors[i];
+
+        auto& anchor_data = fun::ecs::get_component <anchor_data_t> (anchor_entity);
+
+        auto left_controller_entity = anchor_data.left_controller;
+        auto right_controller_entity = anchor_data.right_controller;
+
+        if (left_controller_entity != fun::ecs::nullentity) {
+            fun::ecs::remove_component <controller_data_t> (left_controller_entity);
+        }
+
+        if (right_controller_entity != fun::ecs::nullentity) {
+            fun::ecs::remove_component <controller_data_t> (right_controller_entity);
+        }
+
+        fun::ecs::remove_component <anchor_data_t> (anchor_entity);
+
+        fun::ecs::destroy_entity(left_controller_entity);
+        fun::ecs::destroy_entity(right_controller_entity);
+
+        fun::ecs::destroy_entity(anchor_entity);
+    }
+}
+
 void bezier::bezier_function_t::add_anchor(fun::vec2f_t position, bool create_left_controller, bool create_right_controller) {
     auto anchor_entity = fun::ecs::new_entity();
     auto left_controller_entity = create_left_controller ? fun::ecs::new_entity() : fun::ecs::nullentity;
@@ -24,8 +50,12 @@ void bezier::bezier_function_t::add_anchor(fun::vec2f_t position, bool create_le
     }
 
     if (create_right_controller) {
-        fun::ecs::add_component <controller_data_t> (left_controller_entity, position + CONTROLLER_OFFSET, anchor_entity, left_controller_entity, false);
+        fun::ecs::add_component <controller_data_t> (right_controller_entity, position + CONTROLLER_OFFSET, anchor_entity, left_controller_entity, false);
     }
     
     fun::ecs::add_component <anchor_data_t> (anchor_entity, position, left_controller_entity, right_controller_entity);
+}
+
+std::vector <fun::ecs::entity_t>& bezier::bezier_function_t::get_anchors() {
+    return m_anchors;
 }

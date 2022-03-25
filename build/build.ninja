@@ -67,6 +67,15 @@ build CMakeFiles\BezierFunction.dir\source\bezier_function.cpp.obj: CXX_COMPILER
   TARGET_COMPILE_PDB = CMakeFiles\BezierFunction.dir\
   TARGET_PDB = BezierFunction.pdb
 
+build CMakeFiles\BezierFunction.dir\source\bezier_function_editor.cpp.obj: CXX_COMPILER__BezierFunction_Debug C$:\Files\programming\visual$ code\projects\BezierFunction\source\bezier_function_editor.cpp || cmake_object_order_depends_target_BezierFunction
+  DEFINES = -DIMGUI_USER_CONFIG=\"imconfig-SFML.h\" -DSFML_STATIC
+  FLAGS = /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -MDd -std:c++20
+  INCLUDES = -I"C:\Files\programming\visual code\projects\BezierFunction\header" -I"C:\Files\programming\visual code\projects\BezierFunction\source" -external:I "C:\Files\programming\visual code\projects\BezierFunction\FunEngine2D\libs\sfml\include" -external:I "C:\Files\programming\visual code\projects\BezierFunction\FunEngine2D\libs\imgui_sfml\include" -external:I "C:\Files\programming\visual code\projects\BezierFunction\FunEngine2D\libs\box2d\include" -external:W0
+  OBJECT_DIR = CMakeFiles\BezierFunction.dir
+  OBJECT_FILE_DIR = CMakeFiles\BezierFunction.dir\source
+  TARGET_COMPILE_PDB = CMakeFiles\BezierFunction.dir\
+  TARGET_PDB = BezierFunction.pdb
+
 build CMakeFiles\BezierFunction.dir\source\interface.cpp.obj: CXX_COMPILER__BezierFunction_Debug C$:\Files\programming\visual$ code\projects\BezierFunction\source\interface.cpp || cmake_object_order_depends_target_BezierFunction
   DEFINES = -DIMGUI_USER_CONFIG=\"imconfig-SFML.h\" -DSFML_STATIC
   FLAGS = /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -MDd -std:c++20
@@ -84,7 +93,7 @@ build CMakeFiles\BezierFunction.dir\source\interface.cpp.obj: CXX_COMPILER__Bezi
 #############################################
 # Link the executable BezierFunction.exe
 
-build BezierFunction.exe: CXX_EXECUTABLE_LINKER__BezierFunction_Debug CMakeFiles\BezierFunction.dir\main.cpp.obj CMakeFiles\BezierFunction.dir\source\bezier_function.cpp.obj CMakeFiles\BezierFunction.dir\source\interface.cpp.obj | FunEngine2D\core\fe2d_core.lib ..\FunEngine2D\libs\sfml\lib\sfml-network-s-d.lib ..\FunEngine2D\libs\sfml\lib\sfml-audio-s-d.lib ..\FunEngine2D\libs\sfml\lib\openal32.lib ..\FunEngine2D\libs\sfml\lib\vorbisfile.lib ..\FunEngine2D\libs\sfml\lib\vorbisenc.lib ..\FunEngine2D\libs\sfml\lib\vorbis.lib ..\FunEngine2D\libs\sfml\lib\ogg.lib ..\FunEngine2D\libs\sfml\lib\flac.lib ..\FunEngine2D\libs\imgui_sfml\lib\ImGui-SFML.lib ..\FunEngine2D\libs\sfml\lib\sfml-graphics-s-d.lib ..\FunEngine2D\libs\sfml\lib\sfml-window-s-d.lib ..\FunEngine2D\libs\sfml\lib\sfml-system-s-d.lib ..\FunEngine2D\libs\sfml\lib\freetype.lib ..\FunEngine2D\libs\box2d\lib\box2d.lib || FunEngine2D\core\fe2d_core.lib
+build BezierFunction.exe: CXX_EXECUTABLE_LINKER__BezierFunction_Debug CMakeFiles\BezierFunction.dir\main.cpp.obj CMakeFiles\BezierFunction.dir\source\bezier_function.cpp.obj CMakeFiles\BezierFunction.dir\source\bezier_function_editor.cpp.obj CMakeFiles\BezierFunction.dir\source\interface.cpp.obj | FunEngine2D\core\fe2d_core.lib ..\FunEngine2D\libs\sfml\lib\sfml-network-s-d.lib ..\FunEngine2D\libs\sfml\lib\sfml-audio-s-d.lib ..\FunEngine2D\libs\sfml\lib\openal32.lib ..\FunEngine2D\libs\sfml\lib\vorbisfile.lib ..\FunEngine2D\libs\sfml\lib\vorbisenc.lib ..\FunEngine2D\libs\sfml\lib\vorbis.lib ..\FunEngine2D\libs\sfml\lib\ogg.lib ..\FunEngine2D\libs\sfml\lib\flac.lib ..\FunEngine2D\libs\imgui_sfml\lib\ImGui-SFML.lib ..\FunEngine2D\libs\sfml\lib\sfml-graphics-s-d.lib ..\FunEngine2D\libs\sfml\lib\sfml-window-s-d.lib ..\FunEngine2D\libs\sfml\lib\sfml-system-s-d.lib ..\FunEngine2D\libs\sfml\lib\freetype.lib ..\FunEngine2D\libs\box2d\lib\box2d.lib || FunEngine2D\core\fe2d_core.lib
   FLAGS = /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -MDd
   LINK_FLAGS = /machine:x64 /debug /INCREMENTAL /subsystem:console
   LINK_LIBRARIES = FunEngine2D\core\fe2d_core.lib  ..\FunEngine2D\libs\sfml\lib\sfml-network-s-d.lib  ws2_32.lib  ..\FunEngine2D\libs\sfml\lib\sfml-audio-s-d.lib  ..\FunEngine2D\libs\sfml\lib\openal32.lib  ..\FunEngine2D\libs\sfml\lib\vorbisfile.lib  ..\FunEngine2D\libs\sfml\lib\vorbisenc.lib  ..\FunEngine2D\libs\sfml\lib\vorbis.lib  ..\FunEngine2D\libs\sfml\lib\ogg.lib  ..\FunEngine2D\libs\sfml\lib\flac.lib  ..\FunEngine2D\libs\imgui_sfml\lib\ImGui-SFML.lib  ..\FunEngine2D\libs\sfml\lib\sfml-graphics-s-d.lib  ..\FunEngine2D\libs\sfml\lib\sfml-window-s-d.lib  ..\FunEngine2D\libs\sfml\lib\sfml-system-s-d.lib  winmm.lib  gdi32.lib  OpenGL32.lib  ..\FunEngine2D\libs\sfml\lib\freetype.lib  opengl32.lib  glu32.lib  ..\FunEngine2D\libs\box2d\lib\box2d.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib

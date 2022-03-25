@@ -11,6 +11,11 @@
 },
 {
   "directory": "C:/Files/programming/visual code/projects/BezierFunction/build",
+  "command": "C:\\PROGRA~1\\MICROS~2\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1430~1.307\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DIMGUI_USER_CONFIG=\\\"imconfig-SFML.h\\\" -DSFML_STATIC -I\"C:\\Files\\programming\\visual code\\projects\\BezierFunction\\header\" -I\"C:\\Files\\programming\\visual code\\projects\\BezierFunction\\source\" -external:I \"C:\\Files\\programming\\visual code\\projects\\BezierFunction\\FunEngine2D\\libs\\sfml\\include\" -external:I \"C:\\Files\\programming\\visual code\\projects\\BezierFunction\\FunEngine2D\\libs\\imgui_sfml\\include\" -external:I \"C:\\Files\\programming\\visual code\\projects\\BezierFunction\\FunEngine2D\\libs\\box2d\\include\" -external:W0 /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -MDd -std:c++20 /FoCMakeFiles\\BezierFunction.dir\\source\\bezier_function_editor.cpp.obj /FdTARGET_COMPILE_PDB /FS -c \"C:\\Files\\programming\\visual code\\projects\\BezierFunction\\source\\bezier_function_editor.cpp\"",
+  "file": "C:\\Files\\programming\\visual code\\projects\\BezierFunction\\source\\bezier_function_editor.cpp"
+},
+{
+  "directory": "C:/Files/programming/visual code/projects/BezierFunction/build",
   "command": "C:\\PROGRA~1\\MICROS~2\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1430~1.307\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DIMGUI_USER_CONFIG=\\\"imconfig-SFML.h\\\" -DSFML_STATIC -I\"C:\\Files\\programming\\visual code\\projects\\BezierFunction\\header\" -I\"C:\\Files\\programming\\visual code\\projects\\BezierFunction\\source\" -external:I \"C:\\Files\\programming\\visual code\\projects\\BezierFunction\\FunEngine2D\\libs\\sfml\\include\" -external:I \"C:\\Files\\programming\\visual code\\projects\\BezierFunction\\FunEngine2D\\libs\\imgui_sfml\\include\" -external:I \"C:\\Files\\programming\\visual code\\projects\\BezierFunction\\FunEngine2D\\libs\\box2d\\include\" -external:W0 /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -MDd -std:c++20 /FoCMakeFiles\\BezierFunction.dir\\source\\interface.cpp.obj /FdTARGET_COMPILE_PDB /FS -c \"C:\\Files\\programming\\visual code\\projects\\BezierFunction\\source\\interface.cpp\"",
   "file": "C:\\Files\\programming\\visual code\\projects\\BezierFunction\\source\\interface.cpp"
 },
