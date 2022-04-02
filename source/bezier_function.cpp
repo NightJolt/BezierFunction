@@ -9,9 +9,9 @@ namespace {
 }
 
 bezier::bezier_function_t::bezier_function_t() {
-    add_anchor({ 0.f, .5f }, false, true);
+    add_anchor({ 0.f, 1.f }, false, true);
     add_anchor({ .5f, .5f }, true, true);
-    add_anchor({ 1.f, .5f }, true, false);
+    add_anchor({ 1.f, 0.f }, true, false);
 }
 
 bezier::bezier_function_t::~bezier_function_t() {
@@ -54,6 +54,8 @@ void bezier::bezier_function_t::add_anchor(fun::vec2f_t position, bool create_le
     }
     
     fun::ecs::add_component <anchor_data_t> (anchor_entity, position, left_controller_entity, right_controller_entity);
+
+    m_anchors.push_back(anchor_entity);
 }
 
 std::vector <fun::ecs::entity_t>& bezier::bezier_function_t::get_anchors() {

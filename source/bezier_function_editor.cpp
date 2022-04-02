@@ -34,6 +34,29 @@ void bezier::bezier_function_editor_t::resize_editor_window(fun::vec2f_t new_edi
     m_editor_window_size = new_editor_window_size;
 }
 
+fun::vec2f_t bezier::bezier_function_editor_t::world_to_bezier(fun::vec2f_t p) {
+    return fun::vec2f_t { 1.f, 1.f } - (p - m_editor_window_position) / m_editor_window_size;
+}
+
+fun::vec2f_t bezier::bezier_function_editor_t::bezier_to_world(fun::vec2f_t p) {
+    return (fun::vec2f_t { 1.f, 1.f } - p) * m_editor_window_size + m_editor_window_position;
+}
+
+void bezier::bezier_function_editor_t::update() {
+    for (auto entity : m_bezier_function.get_anchors()) {
+        auto& data = fun::ecs::get_component <anchor_data_t> (entity);
+        auto& interactable = fun::ecs::get_component <fun::interactable_t> (entity);
+
+        fun::vec2f_t mouse_position = fun::winmgr::main_window->get_mouse_world_position();
+        
+        if (interactable.left_hold) {
+            fun::vec2f_t bezier_position = world_to_bezier(mouse_position - interactable.mouse_offset);
+
+            data.position.y = fun::math::clamp(bezier_position.y, 0.f, 1.f);
+        }
+    }
+}
+
 void bezier::bezier_function_editor_t::draw(fun::winmgr::window_t* window, fun::layer_t layer) {
     const fun::layer_t points_layer = layer + 1;
 
@@ -43,7 +66,6 @@ void bezier::bezier_function_editor_t::draw(fun::winmgr::window_t* window, fun::
         // ? anchor
         {
             auto& circle = fun::ecs::get_component <sf::CircleShape> (anchor_entity);
-
             circle.setPosition(bezier_to_world(anchor_data.position).to_sf());
 
             window->draw_world(circle, points_layer);
@@ -62,6 +84,13 @@ void bezier::bezier_function_editor_t::init_anchor(fun::ecs::entity_t anchor_ent
     circle.setFillColor(ANCHOR_COLOR);
     circle.setOutlineThickness(0);
     circle.setOrigin(ANCHOR_RADIUS, ANCHOR_RADIUS);
+
+    fun::ecs::add_component <fun::interactable_t> (anchor_entity, [this, anchor_entity](fun::vec2f_t p) -> bool {
+        auto& data = fun::ecs::get_component <anchor_data_t> (anchor_entity);
+        auto& circle = fun::ecs::get_component <sf::CircleShape> (anchor_entity);
+
+        return fun::math::distance(this->bezier_to_world(data.position), p) <= circle.getRadius() * 2.f;
+    });
 }
 
 void bezier::bezier_function_editor_t::init_controller(fun::ecs::entity_t controller_entity) {
@@ -72,12 +101,4 @@ void bezier::bezier_function_editor_t::init_controller(fun::ecs::entity_t contro
     circle.setFillColor(CONTROLLER_COLOR);
     circle.setOutlineThickness(0);
     circle.setOrigin(CONTROLLER_RADIUS, CONTROLLER_RADIUS);
-}
-
-fun::vec2f_t bezier::bezier_function_editor_t::world_to_bezier(fun::vec2f_t p) {
-    return fun::vec2f_t { 1.f, 1.f } - (p - m_editor_window_position) / m_editor_window_size;
-}
-
-fun::vec2f_t bezier::bezier_function_editor_t::bezier_to_world(fun::vec2f_t p) {
-    return (fun::vec2f_t { 1.f, 1.f } - p) * m_editor_window_size + m_editor_window_position;
 }
